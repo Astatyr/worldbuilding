@@ -116,7 +116,7 @@
   <script>
     async function loadManifest() {
       try {
-        const res = await fetch('/generated/manifest.json');
+        const res = await fetch('generated/manifest.json');
         if (!res.ok) throw new Error('manifest not found');
         return await res.json();
       } catch {
@@ -158,7 +158,7 @@
       }
       el.innerHTML = featured.map(c => `
         <a class="char-card" href="characters/${c.id}.html">
-          <div class="char-img" style="${c.image ? 'background-image: url(' + c.image + ')' : ''}"></div>
+          <div class="char-img" style="${c.image ? 'background-image: url(' + c.image.replace(/^\//, '') + ')' : ''}"></div>
           <div class="char-info">
             <div class="char-name">${c.title}</div>
             <div class="char-role">${c.role || ''}</div>
@@ -175,7 +175,7 @@
       }
       el.innerHTML = geography.map(g => `
         <a class="loc-card" href="geography/${g.id}/">
-          <div class="loc-img" style="${g.image ? 'background-image: url(' + g.image + ')' : ''}"></div>
+          <div class="loc-img" style="${g.image ? 'background-image: url(' + g.image.replace(/^\//, '') + ')' : ''}"></div>
           <div class="loc-info">
             <div class="loc-type">${g.type}</div>
             <div class="loc-name">${g.title}</div>
