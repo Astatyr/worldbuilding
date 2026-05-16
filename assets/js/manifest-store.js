@@ -13,7 +13,7 @@
  */
 
 class ManifestStore {
-  static #URL        = '/generated/manifest.json';
+  static #URL = '/worldbuilding/generated/manifest.json';
   static #KEY_DATA   = 'astatyr_manifest';
   static #KEY_ETAG   = 'astatyr_manifest_etag';
 

@@ -37,7 +37,7 @@ class LocationPage extends PageController {
             ? ` style="background-image: url(${loc.image})"`
             : '';
           return `
-            <a class="loc-card" href="/geography/${geoId}/${loc.id}.html">
+            <a class="loc-card" href="${_url('geography/' + geoId + '/' + loc.id + '.html')}">
               <div class="loc-img"${imgStyle}></div>
               <div class="loc-info">
                 <div class="loc-type">Location</div>
@@ -50,7 +50,7 @@ class LocationPage extends PageController {
 
     // Overview content
     await ContentLoader.load(
-      `/generated/geography/${geoId}/index.html`,
+      _url(`generated/geography/${geoId}/index.html`),
       'loc-content',
       `Add index.docx to content/geography/${geoId}/ to show an overview here.`
     );

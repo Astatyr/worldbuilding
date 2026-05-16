@@ -12,9 +12,10 @@ H = HTMLBuilder()
 
 # JS asset paths — all pages load these
 _JS_BASE = [
-    '/assets/js/manifest-store.js',
-    '/assets/js/nav-builder.js',
-    '/assets/js/content-loader.js',
+    '/worldbuilding/assets/js/base.js',
+    '/worldbuilding/assets/js/manifest-store.js',
+    '/worldbuilding/assets/js/content-loader.js',
+    '/worldbuilding/assets/js/nav-builder.js',
 ]
 
 
@@ -62,7 +63,7 @@ class StorylineIndexRenderer(PageRenderer):
     <div id="featured-chars-grid" class="char-grid"></div>
   </div>
 </main>"""
-        return self._shell(body, ['/assets/js/storyline-page.js'], 'new StorylinePage().init();')
+        return self._shell(body, ['/worldbuilding/assets/js/storyline-page.js'], 'new StorylinePage().init();')
 
 
 # ── chapter ───────────────────────────────────────────────────────────────────
@@ -81,7 +82,7 @@ class ChapterRenderer(PageRenderer):
   </div>
   <div class="ch-nav" id="ch-nav"></div>
 </main>"""
-        return self._shell(body, ['/assets/js/chapter-page.js'], 'new ChapterPage().init();')
+        return self._shell(body, ['/worldbuilding/assets/js/chapter-page.js'], 'new ChapterPage().init();')
 
 
 # ── character ─────────────────────────────────────────────────────────────────
@@ -104,7 +105,7 @@ class CharacterRenderer(PageRenderer):
     <div id="char-content" class="doc-content"><p class="loading">Loading&hellip;</p></div>
   </div>
 </main>"""
-        return self._shell(body, ['/assets/js/character-page.js'], 'new CharacterPage().init();')
+        return self._shell(body, ['/worldbuilding/assets/js/character-page.js'], 'new CharacterPage().init();')
 
 
 # ── location (country/region) ─────────────────────────────────────────────────
@@ -139,7 +140,7 @@ class LocationRenderer(PageRenderer):
     </div>
   </div>
 </main>"""
-        return self._shell(body, ['/assets/js/location-page.js'], 'new LocationPage().init();')
+        return self._shell(body, ['/worldbuilding/assets/js/location-page.js'], 'new LocationPage().init();')
 
 
 # ── city ──────────────────────────────────────────────────────────────────────
@@ -175,7 +176,7 @@ class CityRenderer(PageRenderer):
     </div>
   </div>
 </main>"""
-        return self._shell(body, ['/assets/js/city-page.js'], 'new CityPage().init();')
+        return self._shell(body, ['/worldbuilding/assets/js/city-page.js'], 'new CityPage().init();')
 
 
 # ── character hub ─────────────────────────────────────────────────────────────
@@ -224,5 +225,5 @@ class CharacterHubRenderer(PageRenderer):
 }
 .char-hidden { display:none; }
 </style>"""
-        return self._shell(body, ['/assets/js/character-hub-page.js'],
+        return self._shell(body, ['/worldbuilding/assets/js/character-hub-page.js'],
                            'new CharacterHubPage().init();')

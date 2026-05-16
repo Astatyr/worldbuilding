@@ -28,7 +28,7 @@ class CharacterPage extends PageController {
 
     // Character content
     await ContentLoader.load(
-      `/generated/characters/${charId}.html`,
+      _url(`generated/characters/${charId}.html`),
       'char-content',
       `Content not found — push ${charId}.docx to content/characters/ and wait for the Action.`
     );

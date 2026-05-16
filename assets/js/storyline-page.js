@@ -55,8 +55,8 @@ class StorylinePage extends PageController {
           .map(id => charMap[id])
           .filter(Boolean)
           .map(c => `
-            <a class="char-card" href="/characters/${c.id}.html">
-              <div class="char-img" style="${c.image ? 'background-image: url(' + c.image + ')' : ''}"></div>
+            <a class="char-card" href="${_url('characters/' + c.id + '.html')}">
+              <div class="char-img" style="${c.image ? 'background-image: url(' + c.image.replace(/^\//, '') + ')' : ''}"></div>
               <div class="char-info">
                 <div class="char-name">${c.title}</div>
                 <div class="char-role">${c.role || ''}</div>
@@ -67,7 +67,7 @@ class StorylinePage extends PageController {
 
     // Overview content from index.docx
     await ContentLoader.load(
-      `/generated/storylines/${slId}/index.html`,
+      _url(`generated/storylines/${slId}/index.html`),
       'overview-content',
       `Add index.docx to content/storylines/${slId}/ to show an overview here.`
     );

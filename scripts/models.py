@@ -48,7 +48,7 @@ def detect_image(directory: str, basename: str) -> str:
     for ext in ['jpg', 'jpeg', 'png', 'webp']:
         path = os.path.join(directory, f'{basename}.{ext}')
         if os.path.exists(path):
-            return f'/{directory}/{basename}.{ext}'
+            return f'{directory}/{basename}.{ext}'
     return ''
 
 

@@ -30,7 +30,7 @@ class CityPage extends PageController {
     const countryLink = document.getElementById('country-link');
     if (countryLink) {
       countryLink.textContent = geo.title;
-      countryLink.href = `/geography/${geoId}/`;
+      countryLink.href = _url(`geography/${geoId}/`;
     }
 
     // Sidebar
@@ -38,7 +38,7 @@ class CityPage extends PageController {
 
     // City content
     await ContentLoader.load(
-      `/generated/geography/${geoId}/${cityId}.html`,
+      _url(`generated/geography/${geoId}/${cityId}.html`),
       'city-content',
       `Add ${cityId}.docx to content/geography/${geoId}/ and wait for the Action.`
     );

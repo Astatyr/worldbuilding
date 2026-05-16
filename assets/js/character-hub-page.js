@@ -23,7 +23,7 @@ class CharacterHubPage extends PageController {
 
     // Render all rows
     list.innerHTML = characters.map(c => `
-      <a class="char-row" href="/characters/${c.id}.html"
+      <a class="char-row" href="${_url('characters/' + c.id + '.html')}"
          data-name="${c.title.toLowerCase()}"
          data-role="${(c.role || '').toLowerCase()}">
         <span class="char-dot${c.image ? ' has-portrait' : ''}"></span>

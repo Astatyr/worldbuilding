@@ -57,7 +57,7 @@ class ChapterPage extends PageController {
 
     // Chapter content
     await ContentLoader.load(
-      `/generated/storylines/${slId}/${chId}.html`,
+      _url(`generated/storylines/${slId}/${chId}.html`),
       'ch-content',
       `Content not found — push ${chId}.docx to content/storylines/${slId}/ and wait for the Action.`
     );

@@ -21,7 +21,7 @@ def _detect_image_style(directory: str, basename: str) -> str:
     for ext in ['jpg', 'jpeg', 'png', 'webp']:
         path = os.path.join(directory, f'{basename}.{ext}')
         if os.path.exists(path):
-            url = f'/{directory}/{basename}.{ext}'
+            url = f'{directory}/{basename}.{ext}'
             return f' style="background-image: url({url})"'
     return ''
 

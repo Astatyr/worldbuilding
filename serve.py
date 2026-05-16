@@ -121,19 +121,21 @@ class GitHubPagesHandler(http.server.SimpleHTTPRequestHandler):
     def _resolve(self, path: str) -> str:
         clean = path.split('?')[0]
 
-        # On GitHub Pages this repo is served at /worldbuilding/
-        # Locally it's at / — redirect so back links work in both places
-        if clean.rstrip('/') == '/worldbuilding':
-            return '/index.html'
+        # Strip /worldbuilding/ prefix — on GitHub Pages the repo IS /worldbuilding/
+        # but locally we serve from root, so strip the prefix for file resolution
+        if clean.startswith('/worldbuilding/'):
+            clean = clean[len('/worldbuilding'):]
+        elif clean.rstrip('/') == '/worldbuilding':
+            clean = '/'
 
         local = '.' + clean
         if os.path.isfile(local):
-            return path
+            return clean
         if os.path.isfile(local + '.html'):
             return clean + '.html'
         if os.path.isfile(local.rstrip('/') + '/index.html'):
             return clean.rstrip('/') + '/index.html'
-        return path
+        return clean
 
     def end_headers(self):
         self.send_header('Cache-Control', 'no-store')

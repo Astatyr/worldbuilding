@@ -83,7 +83,7 @@
       "id": "placeholder",
       "title": "placeholder",
       "role": "",
-      "image": "/assets/images/characters/placeholder.jpg"
+      "image": "assets/images/characters/placeholder.jpg"
     }
   ],
   "geography": [
@@ -100,7 +100,7 @@
       "title": "Vrey",
       "type": "Location",
       "description": "",
-      "image": "/assets/images/geography/Vrey.jpg",
+      "image": "assets/images/geography/Vrey.jpg",
       "locations": [
         {
           "id": "Bitburg",
