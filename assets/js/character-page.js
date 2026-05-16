@@ -19,7 +19,7 @@ class CharacterPage extends PageController {
     }
 
     // Page metadata
-    document.title = `${char.title} \u2014 Astatyr`;
+    document.title = `Astatyr: ${char.title}`;
     document.getElementById('char-name').textContent = char.title;
     document.getElementById('char-role-text').textContent = char.role || '';
 

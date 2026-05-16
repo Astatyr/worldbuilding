@@ -22,7 +22,7 @@ class CityPage extends PageController {
     }
 
     // Page metadata
-    document.title = `${city.title} \u2014 Astatyr`;
+    document.title = `Astatyr: ${city.title}`;
     document.getElementById('city-name').textContent = city.title;
     document.getElementById('city-breadcrumb').textContent = city.title;
 

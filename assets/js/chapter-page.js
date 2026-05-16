@@ -19,7 +19,7 @@ class ChapterPage extends PageController {
       return;
     }
 
-    document.title = `${sl.title} \u2014 Astatyr`;
+    document.title = `Astatyr: ${sl.title}`;
     NavBuilder.forStoryline(sl, chId);
 
     const chIdx = sl.chapters.findIndex(c => c.id === chId);

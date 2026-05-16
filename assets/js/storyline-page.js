@@ -21,7 +21,7 @@ class StorylinePage extends PageController {
     }
 
     // Page metadata
-    document.title = `${sl.title} \u2014 Astatyr`;
+    document.title = `Astatyr: ${sl.title}`;
     document.getElementById('page-title').textContent = sl.title;
     document.getElementById('page-meta').textContent =
       [sl.type, sl.status].filter(Boolean).join(' \u00b7 ');

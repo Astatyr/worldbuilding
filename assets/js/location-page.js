@@ -19,7 +19,7 @@ class LocationPage extends PageController {
     }
 
     // Page metadata
-    document.title = `${geo.title} \u2014 Astatyr`;
+    document.title = `Astatyr: ${geo.title}`;
     document.getElementById('loc-name').textContent = geo.title;
     document.getElementById('loc-type').textContent = geo.type;
 
