@@ -102,7 +102,7 @@
     <section class="wb-section" id="characters">
       <div class="section-label" style="margin-bottom:0">🧍 Characters</div>
       <div style="display:flex;justify-content:flex-end;margin-bottom:1.4rem">
-        <a class="btn-link" href="/characters/">All characters →</a>
+        <a class="btn-link" href="characters/">All characters →</a>
       </div>
       <div id="characters-list" class="char-grid"></div>
     </section>
@@ -137,7 +137,7 @@
           <div class="card-meta">
             <span class="badge">${s.type}</span>
             <span class="badge">${s.status}</span>
-            <a class="btn-link" href="/storylines/${s.id}/">↗ Open</a>
+            <a class="btn-link" href="storylines/${s.id}/">↗ Open</a>
           </div>
         </div>
       `).join('');
@@ -157,7 +157,7 @@
         return;
       }
       el.innerHTML = featured.map(c => `
-        <a class="char-card" href="/characters/${c.id}.html">
+        <a class="char-card" href="characters/${c.id}.html">
           <div class="char-img" style="${c.image ? 'background-image: url(' + c.image + ')' : ''}"></div>
           <div class="char-info">
             <div class="char-name">${c.title}</div>
@@ -174,7 +174,7 @@
         return;
       }
       el.innerHTML = geography.map(g => `
-        <a class="loc-card" href="/geography/${g.id}/">
+        <a class="loc-card" href="geography/${g.id}/">
           <div class="loc-img" style="${g.image ? 'background-image: url(' + g.image + ')' : ''}"></div>
           <div class="loc-info">
             <div class="loc-type">${g.type}</div>
